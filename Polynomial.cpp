@@ -140,12 +140,13 @@ bool Polynomial::isEmpty(){
 }
 void Polynomial::printPolynomial(){
 	Term* temp = head;
-        //std::cout << "P(" << temp->getVariable() << ")=";
+        std::cout << "P(" << temp->getVariable() << ")=";
 	for(int i = 0; i < terms(); i++){
-                std::cout << "Term " << i + 1 << ": ";
 		temp->printData();
+		if(i + 1 < terms()){
+			std::cout << "+";
+		}
                 temp = temp->getNext();
-		std::cout << std::endl;
         }
         std::cout << std::endl;
 
